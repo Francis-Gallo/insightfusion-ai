@@ -83,8 +83,9 @@ def ask(question: str):
     # 🔥 Normalize SQL safely
     sql_query = sql_query.strip()
     sql_query_lower = sql_query.lower().lstrip()
+    first_word = sql_query_lower.split()[:1]
 
-    if not sql_query_lower.split()[0] == "select":
+    if first_word != ["select"]:
 
         return {
             "error": "Only SELECT queries are allowed.",
