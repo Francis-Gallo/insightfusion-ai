@@ -61,7 +61,7 @@ No explanation.
         temperature=0
     )
 
-    sql = response.choices[0].message.content.strip()
+    sql = (response.choices[0].message.content or "").strip()
 
     # 🔥 BULLETPROOF MARKDOWN CLEANING
     sql = sql.replace("```sql", "")

@@ -55,7 +55,7 @@ docker compose up -d
 # 2. Backend
 cd backend
 python -m venv venv && source venv/bin/activate          # Windows: venv\Scripts\activate
-pip install -r requirements.txt                           # on Linux/macOS, remove the pywin32 line first
+pip install -r requirements.txt
 echo "DATABASE_URL=postgresql://admin:admin@localhost:5432/analytics" > .env
 python app/schema_indexer.py                              # embeds the 2 table schemas into Qdrant
 uvicorn app.main:app --reload                             # http://127.0.0.1:8000
